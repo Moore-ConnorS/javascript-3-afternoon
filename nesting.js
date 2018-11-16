@@ -50,7 +50,16 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(var i = 0; i < employees.length; i++){
+    employees[i].firstName === 'Theo' ?
+       employees.splice(i, 1) : null;
+    employees[i].firstName === 'Lorie' ?
+       employees[i].department = 'HR' : null;
+  }
+  return employees
+}
+console.log(employees)
 
 
 
@@ -68,7 +77,28 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+// function removeDuplicates(){
+//   num = workplaceAccidents.length
+//   for(let i = 0; i < num; i++){
+//     for(let j = i + 1; j < num; j++){
+//       if(workplaceAccidents[i] === workplaceAccidents[j]){
+//         workplaceAccidents.splice(i,1);
+//       }
+//     }
+//   }
+//   return workplaceAccidents;
+// }
+
+const removeDuplicates = () => {
+  workplaceAccidents.sort();
+  for(let i = workplaceAccidents.length - 1; i >= 0; i--) {
+    if(workplaceAccidents[i] === workplaceAccidents[i - 1]) {
+      workplaceAccidents.splice(i, 1)
+    }
+}
+  return workplaceAccidents;
+}
+console.log(removeDuplicates(workplaceAccidents))
 
 
 
@@ -97,8 +127,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend= cat.catFriends[1].name;
 
 
 
@@ -138,7 +168,13 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  myCar.accidents.map(n => {
+    if(n.atFaultForAccident){
+      n.atFaultForAccident = false;
+    }
+  })
+}
 
 
 
@@ -157,6 +193,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(arr){
+  for(let i = 0; i < arr.length; i++){
+    for(let k = i; k < arr.length; k++){
+      if([k] % 2 === 0){
+        k = 'even'
+      }else {
+        k = 'odd'
+      }
+    }
+  }
+  return arr;
+}
+console.log(looper(numsArr))
 
 
